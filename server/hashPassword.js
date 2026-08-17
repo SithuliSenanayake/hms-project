@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 
-const plainPassword = 'test123'; // <-- change this to whatever password you want to log in with
+const plainPassword = 'doctor123'; // <-- change this to whatever password you want to log in with
 
 bcrypt.hash(plainPassword, 10, (err, hash) => {
   if (err) {

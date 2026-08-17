@@ -42,4 +42,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
+const { verifyToken } = require('../middleware/auth');
+
+// GET /api/auth/me - returns info about the currently logged-in user
+router.get('/me', verifyToken, (req, res) => {
+  res.json({ message: 'You are authenticated', user: req.user });
+});
+
+
 module.exports = router;
